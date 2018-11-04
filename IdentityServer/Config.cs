@@ -16,23 +16,18 @@ namespace IdentityServer
         }
 
         public static IEnumerable<Client> GetClients() => new List<Client>
+        {
+            // server to server
+            // http://docs.identityserver.io/en/release/quickstarts/6_aspnet_identity.html
+            // https://github.com/IdentityServer/IdentityServer4.Demo/blob/master/src/IdentityServer4Demo/Config.cs
+            new Client
             {
-                new Client
-                {
-                    ClientId = "client",
+                ClientId = "client",
+                ClientSecrets = { new Secret("secret".Sha256()) },
 
-                    // no interactive user, use the clientid/secret for authentication
-                    AllowedGrantTypes = GrantTypes.ClientCredentials,
-
-                    // secret for authentication
-                    ClientSecrets =
-                    {
-                        new Secret("secret".Sha256())
-                    },
-
-                    // scopes that client has access to
-                    AllowedScopes = { "api1" }
-                }
-            };
+                AllowedGrantTypes = GrantTypes.ClientCredentials,
+                AllowedScopes = { "api1" },
+            }
+        };
     }
 }
