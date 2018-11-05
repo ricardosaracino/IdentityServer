@@ -1,9 +1,8 @@
 {
   "ExpandedNodes": [
     "",
-    "\\IdentityServer",
-    "\\IdentityServer\\Controllers"
+    "\\IdentityServer"
   ],
-  "SelectedNode": "\\IdentityServer\\Controllers\\HomeController.cs",
+  "SelectedNode": "\\IdentityServer\\Startup.cs",
   "PreviewInSolutionExplorer": true
 }
